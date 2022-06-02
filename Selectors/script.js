@@ -17,10 +17,18 @@ randomColor = () => {
   let b = Math.floor(Math.random() * 256);
   return `rgb(${r}, ${g}, ${b})`;
 };
-for (let i = 0; i < paragraphes.length; i++) {
-  if (paragraphes[i].classList.contains("important")) {
-    paragraphes[i].style.color = "red";
+for (const element of paragraphes) {
+  if (element.classList.contains("important")) {
+    element.style.color = "red";
   } else {
-    paragraphes[i].style.color = randomColor();
+    element.style.color = randomColor();
+  }
+}
+
+for (const element of paragraphes) {
+  console.log(`${element.innerText}`);
+
+  if (element.classList.contains("important")) {
+    console.log(`, class:${element.className}`);
   }
 }
