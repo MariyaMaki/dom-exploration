@@ -6,6 +6,9 @@ title.forEach(function (element) {
 });
 
 const img = document.querySelectorAll("img");
+for (const element of img) {
+  if (!element.classList.contains("important")) element.style.display = "none";
+}
 
 const paragraphes = document.querySelectorAll("p");
 randomColor = () => {
