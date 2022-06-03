@@ -1,4 +1,4 @@
-function randbgcolor() {
+function randombgcolor() {
   h = Math.floor(Math.random() * 360);
   s = Math.floor(Math.random() * 100);
   l = Math.floor(Math.random() * 100);
@@ -44,12 +44,14 @@ let learner = [
   "Miguel",
   "Sébastien",
 ];
+
+const shuffledArray = learner.sort((a, b) => 0.5 - Math.random());
 for (i = 0; i < nbrLearner; i++) {
   let newSection = document.createElement("section");
   let newArticle = document.createElement("article");
   let newP = document.createElement("p");
   let newText = document.createTextNode(learner[i]);
-  let newColor = randbgcolor();
+  let newColor = randombgcolor();
   let textColor = blackOrWhiteTxt(newColor);
   newSection.style.backgroundColor = newColor;
   newP.style.color = textColor;
